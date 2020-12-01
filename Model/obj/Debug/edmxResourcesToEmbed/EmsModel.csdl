@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AcId" />
+    </Key>
+    <Property Name="AcId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="BankName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="AccountNo" Type="Int64" />
+    <Property Name="IFSCcode" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="AadharCardNo" Type="Int64" />
+    <Property Name="PanCardNo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Salary" Type="Decimal" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeptName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ModifiedDate" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="0" />
+    <Property Name="Gender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="BloodGroup" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="UserId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="0" />
+    <Property Name="Experience" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Shift" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="DeptId" Type="Int32" />
+    <Property Name="RoleId" Type="Int32" />
+    <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="EmpRoleId" Type="Int32" />
+    <Property Name="ImageExtension" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ImageLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Passport" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Visa" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeLeave">
+    <Key>
+      <PropertyRef Name="LeaveId" />
+    </Key>
+    <Property Name="LeaveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="CasualLeave" Type="Int32" />
+    <Property Name="PrivilegeLeave" Type="Int32" />
+    <Property Name="LeaveWithoutPay" Type="Int32" />
+    <Property Name="TotalLeaves" Type="Int32" />
+    <Property Name="Duration" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeLeaveDetail">
+    <Key>
+      <PropertyRef Name="LeaveDId" />
+    </Key>
+    <Property Name="LeaveDId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LeaveId" Type="Int32" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="LeaveType" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="Reason" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EmployeeRole">
+    <Key>
+      <PropertyRef Name="EmpRoleId" />
+    </Key>
+    <Property Name="EmpRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpRoleName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <Property Name="ClientId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ProjectDetail">
+    <Key>
+      <PropertyRef Name="PDId" />
+    </Key>
+    <Property Name="PDId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProjectId" Type="Int32" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="EmpStartDate" Type="DateTime" Precision="0" />
+    <Property Name="EmpEndDate" Type="DateTime" Precision="0" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Reporting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmpId" Type="Int32" />
+    <Property Name="ReportingTo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__Account__EmpId__5BE2A6F2">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Project__ClientI__60A75C0F">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__DeptId__5535A963">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeptId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__EmpRol__08B54D69">
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeRole">
+        <PropertyRef Name="EmpRoleId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmpRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__RoleId__5629CD9C">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmployeeL__EmpId__1DB06A4F">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="EmployeeLeave" Type="Self.EmployeeLeave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeLeave">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProjectDe__EmpId__693CA210">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="ProjectDetails" Type="Self.ProjectDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reporting__EmpId__0B91BA14">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Reporting" Type="Self.Reporting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reporting">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmployeeL__Leave__208CD6FA">
+    <End Role="EmployeeLeave" Type="Self.EmployeeLeave" Multiplicity="0..1" />
+    <End Role="EmployeeLeaveDetails" Type="Self.EmployeeLeaveDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeLeave">
+        <PropertyRef Name="LeaveId" />
+      </Principal>
+      <Dependent Role="EmployeeLeaveDetails">
+        <PropertyRef Name="LeaveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProjectDe__Proje__68487DD7">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="ProjectDetails" Type="Self.ProjectDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Accounts" EntityType="Self.Account" />
+    <EntitySet Name="Clients" EntityType="Self.Client" />
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="EmployeeLeaves" EntityType="Self.EmployeeLeave" />
+    <EntitySet Name="EmployeeLeaveDetails" EntityType="Self.EmployeeLeaveDetail" />
+    <EntitySet Name="EmployeeRoles" EntityType="Self.EmployeeRole" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="ProjectDetails" EntityType="Self.ProjectDetail" />
+    <EntitySet Name="Reportings" EntityType="Self.Reporting" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <AssociationSet Name="FK__Account__EmpId__5BE2A6F2" Association="Self.FK__Account__EmpId__5BE2A6F2">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Account" EntitySet="Accounts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Project__ClientI__60A75C0F" Association="Self.FK__Project__ClientI__60A75C0F">
+      <End Role="Client" EntitySet="Clients" />
+      <End Role="Project" EntitySet="Projects" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__DeptId__5535A963" Association="Self.FK__Employee__DeptId__5535A963">
+      <End Role="Department" EntitySet="Departments" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__EmpRol__08B54D69" Association="Self.FK__Employee__EmpRol__08B54D69">
+      <End Role="EmployeeRole" EntitySet="EmployeeRoles" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__RoleId__5629CD9C" Association="Self.FK__Employee__RoleId__5629CD9C">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmployeeL__EmpId__1DB06A4F" Association="Self.FK__EmployeeL__EmpId__1DB06A4F">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeLeave" EntitySet="EmployeeLeaves" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProjectDe__EmpId__693CA210" Association="Self.FK__ProjectDe__EmpId__693CA210">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reporting__EmpId__0B91BA14" Association="Self.FK__Reporting__EmpId__0B91BA14">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="Reporting" EntitySet="Reportings" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmployeeL__Leave__208CD6FA" Association="Self.FK__EmployeeL__Leave__208CD6FA">
+      <End Role="EmployeeLeave" EntitySet="EmployeeLeaves" />
+      <End Role="EmployeeLeaveDetails" EntitySet="EmployeeLeaveDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProjectDe__Proje__68487DD7" Association="Self.FK__ProjectDe__Proje__68487DD7">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,6 @@
+E:\EMSystem\EMSAPI\Repository.Interface\bin\Debug\Repository.Interface.dll
+E:\EMSystem\EMSAPI\Repository.Interface\bin\Debug\Repository.Interface.pdb
+E:\EMSystem\EMSAPI\Repository.Interface\obj\Debug\Repository.Interface.csprojAssemblyReference.cache
+E:\EMSystem\EMSAPI\Repository.Interface\obj\Debug\Repository.Interface.csproj.CoreCompileInputs.cache
+E:\EMSystem\EMSAPI\Repository.Interface\obj\Debug\Repository.Interface.dll
+E:\EMSystem\EMSAPI\Repository.Interface\obj\Debug\Repository.Interface.pdb

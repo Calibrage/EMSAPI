@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AcId" />
+    </Key>
+    <Property Name="AcId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="BankName" Type="varchar" MaxLength="50" />
+    <Property Name="AccountNo" Type="bigint" />
+    <Property Name="IFSCcode" Type="varchar" MaxLength="25" />
+    <Property Name="AadharCardNo" Type="bigint" />
+    <Property Name="PanCardNo" Type="varchar" MaxLength="25" />
+    <Property Name="Salary" Type="money" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClientName" Type="varchar" MaxLength="50" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="DeptId" />
+    </Key>
+    <Property Name="DeptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeptName" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="varchar" MaxLength="50" />
+    <Property Name="CreatedDate" Type="date" />
+    <Property Name="ModifiedBy" Type="varchar" MaxLength="50" />
+    <Property Name="ModifiedDate" Type="date" />
+    <Property Name="Description" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="date" />
+    <Property Name="Gender" Type="varchar" MaxLength="10" />
+    <Property Name="BloodGroup" Type="varchar" MaxLength="10" />
+    <Property Name="MobileNo" Type="varchar" MaxLength="50" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="150" />
+    <Property Name="UserId" Type="varchar" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="20" />
+    <Property Name="JoiningDate" Type="date" />
+    <Property Name="Experience" Type="varchar" MaxLength="10" />
+    <Property Name="Shift" Type="varchar" MaxLength="10" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="DeptId" Type="int" />
+    <Property Name="RoleId" Type="int" />
+    <Property Name="Image" Type="varchar(max)" />
+    <Property Name="Age" Type="int" />
+    <Property Name="EmpRoleId" Type="int" />
+    <Property Name="ImageExtension" Type="varchar" MaxLength="50" />
+    <Property Name="ImageLocation" Type="varchar" MaxLength="100" />
+    <Property Name="Passport" Type="varchar" MaxLength="50" />
+    <Property Name="Visa" Type="varchar" MaxLength="150" />
+    <Property Name="MaritalStatus" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="EmployeeLeave">
+    <Key>
+      <PropertyRef Name="LeaveId" />
+    </Key>
+    <Property Name="LeaveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="CasualLeave" Type="int" />
+    <Property Name="PrivilegeLeave" Type="int" />
+    <Property Name="LeaveWithoutPay" Type="int" />
+    <Property Name="TotalLeaves" Type="int" />
+    <Property Name="Duration" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="EmployeeLeaveDetails">
+    <Key>
+      <PropertyRef Name="LeaveDId" />
+    </Key>
+    <Property Name="LeaveDId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LeaveId" Type="int" />
+    <Property Name="FromDate" Type="date" />
+    <Property Name="ToDate" Type="date" />
+    <Property Name="LeaveType" Type="varchar" MaxLength="150" />
+    <Property Name="Reason" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="EmployeeRole">
+    <Key>
+      <PropertyRef Name="EmpRoleId" />
+    </Key>
+    <Property Name="EmpRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpRoleName" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="ProjectId" />
+    </Key>
+    <Property Name="ProjectId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectName" Type="varchar" MaxLength="50" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+    <Property Name="ClientId" Type="int" />
+  </EntityType>
+  <EntityType Name="ProjectDetails">
+    <Key>
+      <PropertyRef Name="PDId" />
+    </Key>
+    <Property Name="PDId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProjectId" Type="int" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="EmpStartDate" Type="date" />
+    <Property Name="EmpEndDate" Type="date" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Reporting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpId" Type="int" />
+    <Property Name="ReportingTo" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Account__EmpId__5BE2A6F2">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Account" Type="Self.Account" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Account">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__DeptId__5535A963">
+    <End Role="Department" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="DeptId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="DeptId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__EmpRol__08B54D69">
+    <End Role="EmployeeRole" Type="Self.EmployeeRole" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeRole">
+        <PropertyRef Name="EmpRoleId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="EmpRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Employee__RoleId__5629CD9C">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmployeeL__EmpId__1DB06A4F">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="EmployeeLeave" Type="Self.EmployeeLeave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeeLeave">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EmployeeL__Leave__208CD6FA">
+    <End Role="EmployeeLeave" Type="Self.EmployeeLeave" Multiplicity="0..1" />
+    <End Role="EmployeeLeaveDetails" Type="Self.EmployeeLeaveDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmployeeLeave">
+        <PropertyRef Name="LeaveId" />
+      </Principal>
+      <Dependent Role="EmployeeLeaveDetails">
+        <PropertyRef Name="LeaveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Project__ClientI__60A75C0F">
+    <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+    <End Role="Project" Type="Self.Project" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="Project">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProjectDe__EmpId__693CA210">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProjectDe__Proje__68487DD7">
+    <End Role="Project" Type="Self.Project" Multiplicity="0..1" />
+    <End Role="ProjectDetails" Type="Self.ProjectDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="ProjectId" />
+      </Principal>
+      <Dependent Role="ProjectDetails">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Reporting__EmpId__0B91BA14">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+    <End Role="Reporting" Type="Self.Reporting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Reporting">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMSModelStoreContainer">
+    <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Department" EntityType="Self.Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeLeave" EntityType="Self.EmployeeLeave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeLeaveDetails" EntityType="Self.EmployeeLeaveDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmployeeRole" EntityType="Self.EmployeeRole" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Project" EntityType="Self.Project" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProjectDetails" EntityType="Self.ProjectDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reporting" EntityType="Self.Reporting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Account__EmpId__5BE2A6F2" Association="Self.FK__Account__EmpId__5BE2A6F2">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Account" EntitySet="Account" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__DeptId__5535A963" Association="Self.FK__Employee__DeptId__5535A963">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__EmpRol__08B54D69" Association="Self.FK__Employee__EmpRol__08B54D69">
+      <End Role="EmployeeRole" EntitySet="EmployeeRole" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Employee__RoleId__5629CD9C" Association="Self.FK__Employee__RoleId__5629CD9C">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmployeeL__EmpId__1DB06A4F" Association="Self.FK__EmployeeL__EmpId__1DB06A4F">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeeLeave" EntitySet="EmployeeLeave" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EmployeeL__Leave__208CD6FA" Association="Self.FK__EmployeeL__Leave__208CD6FA">
+      <End Role="EmployeeLeave" EntitySet="EmployeeLeave" />
+      <End Role="EmployeeLeaveDetails" EntitySet="EmployeeLeaveDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Project__ClientI__60A75C0F" Association="Self.FK__Project__ClientI__60A75C0F">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Project" EntitySet="Project" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProjectDe__EmpId__693CA210" Association="Self.FK__ProjectDe__EmpId__693CA210">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProjectDe__Proje__68487DD7" Association="Self.FK__ProjectDe__Proje__68487DD7">
+      <End Role="Project" EntitySet="Project" />
+      <End Role="ProjectDetails" EntitySet="ProjectDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Reporting__EmpId__0B91BA14" Association="Self.FK__Reporting__EmpId__0B91BA14">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Reporting" EntitySet="Reporting" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

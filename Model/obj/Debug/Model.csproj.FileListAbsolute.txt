@@ -1,0 +1,12 @@
+E:\EMSystem\EMSAPI\Model\bin\Debug\Model.dll.config
+E:\EMSystem\EMSAPI\Model\bin\Debug\Model.dll
+E:\EMSystem\EMSAPI\Model\bin\Debug\Model.pdb
+E:\EMSystem\EMSAPI\Model\bin\Debug\EntityFramework.dll
+E:\EMSystem\EMSAPI\Model\bin\Debug\EntityFramework.SqlServer.dll
+E:\EMSystem\EMSAPI\Model\bin\Debug\EntityFramework.xml
+E:\EMSystem\EMSAPI\Model\bin\Debug\EntityFramework.SqlServer.xml
+E:\EMSystem\EMSAPI\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\EMSystem\EMSAPI\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\EMSystem\EMSAPI\Model\obj\Debug\Model.csproj.CopyComplete
+E:\EMSystem\EMSAPI\Model\obj\Debug\Model.dll
+E:\EMSystem\EMSAPI\Model\obj\Debug\Model.pdb
